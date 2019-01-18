@@ -62,6 +62,8 @@ model_relative_abundance_multi  = mSAD(sc, ncl, np.array([cell_density]), dx, 3,
 model_relative_abundance_multi /= np.sum(model_relative_abundance_multi)
 
 #%% PLOT
+print 'Sample richness={:.2f} and evenness={:.2f}'.format(D0,evenness)
+
 plt.plot(rank(sample_relative_abundance), sample_relative_abundance,'^', label='observation')
 plt.plot(rank(model_relative_abundance), model_relative_abundance,'.', label='one species')
 plt.plot(rank(model_relative_abundance_multi), model_relative_abundance_multi,'.', label='multiple species')
@@ -71,5 +73,3 @@ plt.xlabel('species rank')
 plt.ylabel('relative abundance')
 plt.loglog()
 plt.show()
-
-print 'Sample richness={:.2f} and evenness={:.2f}'.format(D0,evenness)

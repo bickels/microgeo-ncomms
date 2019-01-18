@@ -153,7 +153,7 @@ def muTs(T, T0, TL, TH, dH0, dHL, dHH):
     return ((T/T0)*np.exp((dH0/const.R)*(1./T0-1./T)))/(1+np.exp((dHL/const.R)*(1./TL-1./T))+np.exp((dHH/const.R)*(1./TH-1./T)))
 
 def cells_from_npp(npp, mat, m, fC, muTpars=(25, 9.85, 41.5, -5.43e3, -141.1e3, 687.9e3), d=1.):
-    """ Conversion of netprimary productivity to cell density/carrying capacity considering temperature dependent maintenance rates.
+    """ Conversion of net primary productivity to cell density/carrying capacity considering temperature dependent maintenance rates.
  
     Parameters
     ----------
