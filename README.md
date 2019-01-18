@@ -16,7 +16,7 @@ Windows 7 64bit
 Once python and dependencies are installed the script (`example.py`) can be executed from the command line after navigating to the same directory:
 ```
 C:\> cd path\to\script\
-C:\path\to\script\python example.py
+C:\path\to\script\python> example.py
 ```
 Installation (Anaconda distribution recommended) should be possible within less than 30min.
 
