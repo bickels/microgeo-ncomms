@@ -26,16 +26,16 @@ def rank(v):
 
 #%% CONSTANTS
 def constants(key,val=None,mode='r'):
-	""" helper function to import/export constants to textfile as python dictionaries
+    """ helper function to import/export constants to textfile as python dictionaries
 
     Parameters
     ----------
-	key : str
+    key : str
         key for value
 
-	val : value
+    val : value
         value to retrieve. None (default) or value to save if mode 'a'.
-	
+    
     mode: str
         either 'r'(default) for read or 'a' for append
 
