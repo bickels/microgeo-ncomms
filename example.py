@@ -15,6 +15,7 @@ from functions.misc import rank, constants
 
 #%% CONSTANTS
 fC = constants('fC') #carbon content per cell
+fR = constants('fR')
 mt = constants('mt') #maintenance rate
 muTpars = constants('muTpars') #parametrization of temperature dependency (Schoolfield)
 lsh,lsc = constants('zpars') #parametrization of vertical distribution in soil profile
@@ -30,7 +31,7 @@ sample_relative_abundance = relative_abundance.select_dtypes('number').iloc[0]
 #%% CALCULATIONS
 # estimate cell density/carrying capacity based on 25% of NPP
 fz = lognorm.pdf(depth, lsh, loc=0, scale=lsc)
-cell_density = cells_from_npp(0.25*NPP, MAT, mt, fC, muTpars)
+cell_density = cells_from_npp(fR*NPP, MAT, mt, fC, muTpars)
 
 # estimate climatic water content
 por = theta_ptf(CLY*1e2, SLT*1e2, BLD*1e-6, SOC*1e-3, depth)
@@ -50,15 +51,15 @@ evenness = D1/D0
 #%% PREDICTION
 # calculate size and number of aqueous habitats
 s = np.arange(1,len(sample_relative_abundance)+1,dtype='int64')
-sc, _, ncl = aqueous_clusters(cwc, por, L, 3, dx, s, pc=0.52)
+sc, _, ncl = aqueous_clusters(cwc, por, L, 3, dx, s, k=18, pc=0.311)
 
 # calculate species abundance distribution
 # one species per habitat
-model_relative_abundance  = mSAD(sc, ncl, np.array([cell_density]), dx, 3, lod=1e4, fnsp=1)
+model_relative_abundance  = mSAD(sc, ncl, np.array([cell_density]), dx, 3, lod=3.6e3, fnsp=1)
 model_relative_abundance /= np.sum(model_relative_abundance)
 
 # multiple species per habitat
-model_relative_abundance_multi  = mSAD(sc, ncl, np.array([cell_density]), dx, 3, lod=1e4, fnsp=s**(1/3.))
+model_relative_abundance_multi  = mSAD(sc, ncl, np.array([cell_density]), dx, 3, lod=3.6e3, fnsp=s**(1/3.))
 model_relative_abundance_multi /= np.sum(model_relative_abundance_multi)
 
 #%% PLOT
