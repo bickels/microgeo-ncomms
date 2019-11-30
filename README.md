@@ -3,7 +3,7 @@
 μGEO - micro-geography of bacterial abundance and diversity across spatial scales. Minimal example demonstrating the model implementation.
 
 ---
-This repository accommodates computer code and example data for the manuscript *Soil bacterial diversity shaped by microscale processes across biomes* submitted to Nature Communications.
+This repository accommodates computer code and example data for the manuscript *Soil bacterial diversity mediated by microscale aqueous-phase processes across biomes* submitted to Nature Communications.
 
 Authors: Samuel Bickel and Dani Or
 
