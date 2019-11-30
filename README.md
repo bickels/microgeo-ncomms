@@ -30,5 +30,5 @@ C:\path\to\script\> python example.py
 Installation (Anaconda distribution recommended) should be possible within less than 30min.
 
 ## Demo
-The demonstration includes a small excerpt of data from the Earth Microbiome Project as published by Thompson *et al.* 2017 (DOI:10.1038/nature24621) combined with covariates as described in Supplementary information table S1 of the submitted manuscript. 
+The demonstration includes a small excerpt of data from the Earth Microbiome Project as published by Thompson *et al.* 2017 (DOI:10.1038/nature24621) combined with covariates as described in Supplementary information table 1 of our manuscript. 
 Running the demo `example.py` produces a figure comparing two modeled species abundance distributions (one and multiple species per habitat) with the observed distribution using the georeferenced metadata of the sample. It additionally prints the samples bacterial species richness and evenness in the terminal. The runtime should be less then 5s.
